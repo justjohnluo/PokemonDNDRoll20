@@ -1,16 +1,14 @@
 <!-- TODO: use columns and layouts -->
-<!-- TODO: change name attributes to follow standard of Roll20 of beginning with attr_ -->
-
 <!-- TODO: add rest of the pokemon types -->
 <p>Pokemon Name & Types
-    <input type="text" name="pokemon_name" value="Insert Name Here">
-    <select name="pokemon_type">
+    <input type="text" name="attr_pokemon_name" value="Insert Name Here">
+    <select name="attr_pokemon_type">
       <option value="normal">Normal</option>
       <option value="fighting">Fighting</option>
       <option value="flying">Flying</option>
       <option value="poison">Posion</option>
     </select>
-    <select name="pokemon_type2">
+    <select name="attr_pokemon_type2">
       <option value="normal">Normal</option>
       <option value="fighting">Fighting</option>
       <option value="flying">Flying</option>
@@ -18,11 +16,11 @@
     </select>
 </p>
 <p>Pokemon Level 
-    <input type="number" name="pokemon_level" value="0"> 
+    <input type="number" name="attr_pokemon_level" value="0"> 
 </p>
 <!-- roll20 doesn't seem to support specific functions to do stuff with value through a button. Suggest 1st version to just have player manage own exp and level -->
 <p>Pokemon Exp
-    <input type="number" name="pokemon_exp" value="0">
+    <input type="number" name="attr_pokemon_exp" value="0">
 </p>
 
 <!-- TODO: Implement auto calculation for stats based on growth, consider using Sheet worker scripts https://wiki.roll20.net/Sheet_Worker_Scripts -->
@@ -31,56 +29,56 @@
 <!-- TODO: Add area for items, (do they affect stats?) -->
 <h2>Stats</h2>
 <p>HP
-    <input type="number" name="pokemon_hp" value="0">
-    <select name="pokemon_hp_growth">
+    <input type="number" name="attr_pokemon_hp" value="0">
+    <select name="attr_pokemon_hp_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
     </select>
 </p>
 <p>Atk
-    <input type="number" name="pokemon_atk" value="0">
-    <select name="pokemon_atk_growth">
+    <input type="number" name="attr_pokemon_atk" value="0">
+    <select name="attr_pokemon_atk_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
     </select>
 </p>
 <p>Spec Atk
-    <input type="number" name="pokemon_satk" value="0">
-    <select name="pokemon_satk_growth">
+    <input type="number" name="attr_pokemon_satk" value="0">
+    <select name="attr_pokemon_satk_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
     </select>
 </p>
 <p>Def
-    <input type="number" name="pokemon_def" value="0">
-    <select name="pokemon_def_growth">
+    <input type="number" name="attr_pokemon_def" value="0">
+    <select name="attr_pokemon_def_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
     </select>
 </p>
 <p>Spec Def
-    <input type="number" name="pokemon_sdef" value="0">
-    <select name="pokemon_sdef_growth">
+    <input type="number" name="attr_pokemon_sdef" value="0">
+    <select name="attr_pokemon_sdef_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
     </select>
 </p>
 <p>Speed
-    <input type="number" name="pokemon_speed" value="0">
-    <select name="pokemon_speed_growth">
+    <input type="number" name="attr_pokemon_speed" value="0">
+    <select name="attr_pokemon_speed_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
     </select>
 </p>
 <p>Luck
-    <input type="number" name="pokemon_luck" value="0">
-    <select name="pokemon_luck_growth">
+    <input type="number" name="attr_pokemon_luck" value="0">
+    <select name="attr_pokemon_luck_growth">
       <option value="*">*</option>
       <option value="**">**</option>
       <option value="***">***</option>
@@ -89,29 +87,23 @@
 
 <h2>Skills</h2>
 
-<!-- TODO: Use sheet rolls and roll buttons https://wiki.roll20.net/Building_Character_Sheets#Sheet_Rolls_and_Roll_Buttons for skills, take the value from the dropdown to get the roll -->
-
 <!-- TODO: Use repeating sections for skills https://wiki.roll20.net/Building_Character_Sheets#Repeating_Sections -->
-<!-- TODO: Test to see if can use value from Roll such as "d20", and add that into the button roll argument. 
-	Roll button argument goes like
-		value='/roll 1d20 = @{Stat}' 
-	If that doesn't work, will need to add various button rolls for various dice configurations
--->
+<!-- TODO: Use roll templates -->
 <p>
     <!-- TODO: use table/span to avoid having to list name,pp,maxpp text on every skill. Also add buttons to reduce current PP, and reset max PP -->
     Name 
-    <input type="text" name="pokemon_skill_1" value="Insert Skill Name">
+    <input type="text" name="attr_pokemon_skill_1" value="Insert Skill Name">
     PP
-    <input type="number" name="pokemon_skill_1_currentpp" value="0">
+    <input type="number" name="attr_pokemon_skill_1_currentpp" value="0">
     MaxPP
-    <input type="number" name="pokemon_skill_1_maxpp" value="0">
+    <input type="number" name="attr_pokemon_skill_1_maxpp" value="0">
     BaseDMG
-    <input type="number" name="pokemon_skill_1_basedmg" value="0">
+    <input type="number" name="attr_pokemon_skill_1_basedmg" value="0">
     Roll
-    <select name="pokemon_skill_1_rolltype">
-      <option value="D20">D20</option>
-      <option value="D16">D16</option>
-      <option value="D6">D6</option>
+    <select name="attr_pokemon_skill_1_rolltype">
+      <option value="1d20">D20</option>
+      <option value="1d16">D16</option>
+      <option value="1d6">D6</option>
     </select>
-    
+    <button type='roll' value='/roll @{pokemon_skill_1_rolltype} + @{pokemon_atk} + @{pokemon_skill_1_basedmg}' name='roll_Skill1'>
 </p>
