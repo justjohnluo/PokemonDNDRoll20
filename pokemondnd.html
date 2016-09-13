@@ -1,3 +1,7 @@
+<!-- TODO: use columns and layouts -->
+<!-- TODO: change name attributes to follow standard of Roll20 of beginning with attr_ -->
+
+<!-- TODO: add rest of the pokemon types -->
 <p>Pokemon Name & Types
     <input type="text" name="pokemon_name" value="Insert Name Here">
     <select name="pokemon_type">
@@ -21,6 +25,8 @@
     <input type="number" name="pokemon_exp" value="0">
 </p>
 
+<!-- TODO: Implement auto calculation for stats based on growth, consider using Sheet worker scripts https://wiki.roll20.net/Sheet_Worker_Scripts -->
+<!-- TODO: Change growth values to number based, to use in auto calculation? -->
 <h2>Stats</h2>
 <p>HP
     <input type="number" name="pokemon_hp" value="0">
@@ -81,8 +87,10 @@
 
 <h2>Skills</h2>
 
+<!-- TODO: Use sheet rolls and roll buttons https://wiki.roll20.net/Building_Character_Sheets#Sheet_Rolls_and_Roll_Buttons for skills, take the value from the dropdown to get the roll -->
+
 <p>
-    <!-- TODO use table/span to avoid having to list name,pp,maxpp text on every skill. Also add buttons to reduce current PP, and reset max PP -->
+    <!-- TODO: use table/span to avoid having to list name,pp,maxpp text on every skill. Also add buttons to reduce current PP, and reset max PP -->
     Name 
     <input type="text" name="pokemon_skill_1" value="Insert Skill Name">
     PP
