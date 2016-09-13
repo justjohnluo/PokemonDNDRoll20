@@ -20,13 +20,15 @@
 <p>Pokemon Level 
     <input type="number" name="pokemon_level" value="0"> 
 </p>
-<!-- TODO: Disable input, and use button to add exp, and confirm level up -->
+<!-- roll20 doesn't seem to support specific functions to do stuff with value through a button. Suggest 1st version to just have player manage own exp and level -->
 <p>Pokemon Exp
     <input type="number" name="pokemon_exp" value="0">
 </p>
 
 <!-- TODO: Implement auto calculation for stats based on growth, consider using Sheet worker scripts https://wiki.roll20.net/Sheet_Worker_Scripts -->
 <!-- TODO: Change growth values to number based, to use in auto calculation? -->
+<!-- TODO: Allow additional input for player to put in random(from dice) points into attributes. Use button roll for that -->
+<!-- TODO: Add area for items, (do they affect stats?) -->
 <h2>Stats</h2>
 <p>HP
     <input type="number" name="pokemon_hp" value="0">
@@ -89,6 +91,12 @@
 
 <!-- TODO: Use sheet rolls and roll buttons https://wiki.roll20.net/Building_Character_Sheets#Sheet_Rolls_and_Roll_Buttons for skills, take the value from the dropdown to get the roll -->
 
+<!-- TODO: Use repeating sections for skills https://wiki.roll20.net/Building_Character_Sheets#Repeating_Sections -->
+<!-- TODO: Test to see if can use value from Roll such as "d20", and add that into the button roll argument. 
+	Roll button argument goes like
+		value='/roll 1d20 = @{Stat}' 
+	If that doesn't work, will need to add various button rolls for various dice configurations
+-->
 <p>
     <!-- TODO: use table/span to avoid having to list name,pp,maxpp text on every skill. Also add buttons to reduce current PP, and reset max PP -->
     Name 
